@@ -36,4 +36,4 @@ Remember to use spies to verify if a function is being called. You can pass a sp
 Requirements:
 
 Do not forget to bind the functions you are passing to the children to improve performances
-When running, there should not be any lint error in the console
+When running, there should not be any lint error in the console.
