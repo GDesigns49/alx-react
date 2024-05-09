@@ -1,8 +1,14 @@
 import React from "react";
 import { shallow } from "enzyme";
 import CourseList from "./CourseList";
+import { StyleSheetTestUtils } from 'aphrodite';
 
 describe("<CourseList />", () => {
+
+  beforeEach(() => {
+    StyleSheetTestUtils.suppressStyleInjection();
+  });
+
   it("renders without crashing", () => {
     const courses = shallow(<CourseList />);
     expect(courses).toBeDefined();
@@ -24,6 +30,7 @@ describe("Testing <CourseList listCourses={listCourses}/>", () => {
   let course;
 
   beforeEach(() => {
+    StyleSheetTestUtils.suppressStyleInjection();
     const listCourses = [
       {id: 1, name: 'ES6', credit: 60},
       {id: 2, name: 'Webpack', credit: 20},

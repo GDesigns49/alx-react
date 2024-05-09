@@ -1,8 +1,13 @@
 import React from "react";
 import { shallow } from "enzyme";
 import CourseListRow from "./CourseListRow";
+import { StyleSheetTestUtils } from 'aphrodite';
 
 describe("<CourseListRow />", () => {
+  beforeEach(() => {
+    StyleSheetTestUtils.suppressStyleInjection();
+  });
+
   it("When isHeader is true test the component renders one cell with colspan = 2 when textSecondCell does not exist", () => {
       const courseRow = shallow(<CourseListRow isHeader={true} textFirstCell="first cell test"/>);
       expect(courseRow.find('th')).toHaveLength(1);
